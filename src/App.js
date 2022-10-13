@@ -1,19 +1,21 @@
-import logo from './logo.svg';
+import { useEffect,useState } from 'react';
 import './App.css';
-import Button from './components/Button';
+import Navbar from './components/Navbar';
+import Employees from './components/Employees';
+
 function App() {
-  return (
- <div className="navbar">
-  <div className="logo">EMS</div>
-  <div className="links">
-    <ul>
-<Button text="Home"/> 
-<Button text="Profile"/>
-<Button text="List"/>
-<Button text="Roles"/>
-    </ul>
-  </div>
- </div>
+  const [employees,setEmployees]=useState([])
+  useEffect(()=>{
+    fetch('http://localhost:8000/employees').then(res=>res.json()).then(data=>setEmployees(data))
+
+  },[])
+
+
+  return (<>
+  <Navbar />
+<Employees employees={employees}/>
+  </>
+
   );
 }
 
