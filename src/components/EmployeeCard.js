@@ -1,6 +1,11 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
+function EmployeeCard({id,image,name, age, salary, title}) {
+  const history=useNavigate()
 
-function EmployeeCard({id,image,name, age, salary, title, showCard}) {
+const showCard=(id)=>{
+  history("/single/"+id, { replace: true });
+}
   return (
     <div className='card col-md-2' onClick={()=>showCard(id)}>
       <img src={image} alt="my img" srcset="" />

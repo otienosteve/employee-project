@@ -20,8 +20,12 @@ function showCard(id){
   <BrowserRouter>
 <Routes>
 <Route exact path='/' element={<Employees employees={employees} showCard={showCard}/>} />
-<Route exact path='/single/:id' element={<Single/>} />
-{/* <Route exact path='/signup' element={<Signup/>} /> */}
+<Route exact path='/single/:id' element={<Single employees={employees}/>} />
+<Route exact path='/Profile' element={<Employees/>} />
+<Route exact path='/List' element={<Employees/>} />
+<Route exact path='/Roles' element={<Employees/>} />
+<Route exact path='/Home' element={<Employees/>} />
+
 
 </Routes>
 
