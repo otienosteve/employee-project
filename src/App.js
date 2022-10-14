@@ -5,6 +5,9 @@ import Employees from './components/Employees';
 import Single from './components/Single';
 import { Routes , Route} from 'react-router-dom'
 import Button from './components/Button';
+import Profile from './components/Profile';
+import Roles from './components/Roles';
+import Edit from './components/Edit';
 
 function App() {
   const [employees,setEmployees]=useState([])
@@ -18,6 +21,11 @@ function App() {
 <Routes>
 <Route exact path='/' element={<Employees employees={employees} />} />
 <Route exact path='/single/:id' element={<Single employees={employees}/>} />
+<Route exact path='/Profile' element={<Profile/>} />
+<Route exact path='/Roles' element={<Roles/>} />
+<Route exact path='/Edit' element={<Edit/>} />
+
+
 </Routes>
  </>
 

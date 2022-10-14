@@ -15,7 +15,7 @@ navigate('/')
     <ul>
 <Button text="Home"/> 
 <Button text="Profile"/>
-<Button text="List"/>
+<Button text="Edit"/>
 <Button text="Roles"/>
     </ul>
   </div>

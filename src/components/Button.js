@@ -4,7 +4,12 @@ import { useNavigate } from 'react-router-dom';
 function Button({text}) {
   const history=useNavigate()
     function handleNav(){
-    history('/'+text);
+      if(text==='Home'){
+        console.log('home')
+        history('/')
+      }else{
+        history('/'+text);
+      }
   }
   return (<li onClick={handleNav}>
     {text}
