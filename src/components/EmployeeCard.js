@@ -1,13 +1,13 @@
 import React from 'react'
 
-function EmployeeCard({image,name, age, salary, title}) {
+function EmployeeCard({id,image,name, age, salary, title, showCard}) {
   return (
-    <div className='card col-md-2'>
+    <div className='card col-md-2' onClick={()=>showCard(id)}>
       <img src={image} alt="my img" srcset="" />
-<p className='card-title'>{name}</p>
-<p>{title}</p>
-<p>{age}</p>
-<p>{salary}</p>
+<p className='card-title text-center'>{name}</p>
+<p className='text-center'>{title}</p>
+<p className='text-center'>{age}</p>
+<p className='text-center'>{salary}</p>
 
     </div>
   )
