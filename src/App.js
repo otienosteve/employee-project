@@ -3,7 +3,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Employees from './components/Employees';
 import Single from './components/Single';
-import {BrowserRouter , Routes , Route} from 'react-router-dom'
+import { Routes , Route} from 'react-router-dom'
+import Button from './components/Button';
 
 function App() {
   const [employees,setEmployees]=useState([])
@@ -17,7 +18,6 @@ function showCard(id){
 
   return (<>
    <Navbar />
-  <BrowserRouter>
 <Routes>
 <Route exact path='/' element={<Employees employees={employees} showCard={showCard}/>} />
 <Route exact path='/single/:id' element={<Single employees={employees}/>} />
@@ -25,14 +25,9 @@ function showCard(id){
 <Route exact path='/List' element={<Employees/>} />
 <Route exact path='/Roles' element={<Employees/>} />
 <Route exact path='/Home' element={<Employees/>} />
-
-
+<Route exact path='/Nice' element={<Button/>} />
 </Routes>
-
-</BrowserRouter>
- 
-
-  </>
+ </>
 
   );
 }

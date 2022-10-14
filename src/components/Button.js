@@ -2,11 +2,11 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
 function Button({text}) {
-  const navigate = useNavigate();
+  const history=useNavigate()
     function handleNav(){
-    navigate('/'+text);
+    history('/'+text);
   }
-  return (<li onClick={handleNav}>
+  return (<li>
     {text}
   </li>
   )
