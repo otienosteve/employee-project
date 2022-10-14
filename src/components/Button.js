@@ -6,7 +6,7 @@ function Button({text}) {
     function handleNav(){
     history('/'+text);
   }
-  return (<li>
+  return (<li onClick={handleNav}>
     {text}
   </li>
   )
