@@ -4,7 +4,7 @@ import EmployeeCard from './EmployeeCard'
 
 function Employees({employees}) {
   return (
-   <div>
+   <div class="row">
 {employees.map(employee=><EmployeeCard key={employee.id} {...employee}/>)}
    </div>
 
