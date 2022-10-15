@@ -21,6 +21,8 @@ setAge(onset[0].age)
 setImage(onset[0].image)
 setRole(onset[0].title)
 setSalary(onset[0].salary)
+setId(onset[0].id)
+console.log(id)
   }
   console.log(found)
   const [name,setName]=useState()
@@ -28,6 +30,7 @@ setSalary(onset[0].salary)
   const [image,setImage]=useState()
   const [salary,setSalary]=useState()
   const [role,setRole]=useState()
+  const [id, setId]=useState(0)
  const  handleSubmit=(e)=>{
   e.preventDefault()
   const employee={
@@ -38,7 +41,7 @@ setSalary(onset[0].salary)
       image:image
   }
   console.log(employee)
-  fetch('http://localhost:8000/employees',{method:"PATCH",headers:{"content-type":"application/json", 'Accept':'application/json'}, body:JSON.stringify(employee)}).then(res=>res.json()).then(data=>console.log(data))
+  fetch('http://localhost:8000/employees/'+id,{method:"PATCH",headers:{"content-type":"application/json", 'Accept':'application/json'}, body:JSON.stringify(employee)}).then(res=>res.json()).then(data=>console.log(data))
  }
   return (
     <div className='row'>
