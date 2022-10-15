@@ -3,11 +3,10 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Employees from './components/Employees';
 import Single from './components/Single';
-import { Routes , Route} from 'react-router-dom'
-import Button from './components/Button';
-import Profile from './components/Profile';
+import { Routes , Route} from 'react-router-dom';
 import Roles from './components/Roles';
 import Edit from './components/Edit';
+import Add from './components/Add';
 
 function App() {
   const [employees,setEmployees]=useState([])
@@ -21,9 +20,9 @@ function App() {
 <Routes>
 <Route exact path='/' element={<Employees employees={employees} />} />
 <Route exact path='/single/:id' element={<Single employees={employees}/>} />
-<Route exact path='/Profile' element={<Profile/>} />
+<Route exact path='/Add' element={<Add/>} />
 <Route exact path='/Roles' element={<Roles/>} />
-<Route exact path='/Edit' element={<Edit/>} />
+<Route exact path='/Edit' element={<Edit employees={employees}/>} />
 
 
 </Routes>

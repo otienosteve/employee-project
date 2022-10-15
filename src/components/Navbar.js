@@ -14,9 +14,8 @@ navigate('/')
   <div className="links">
     <ul>
 <Button text="Home"/> 
-<Button text="Profile"/>
+<Button text="Add"/>
 <Button text="Edit"/>
-<Button text="Roles"/>
     </ul>
   </div>
  </div>
