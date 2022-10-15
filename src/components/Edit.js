@@ -1,6 +1,28 @@
 import React,{useState} from 'react'
 
-export default function Edit() {
+export default function Edit({employees}) {
+  function getKeyByValue(object) {
+    var names=[]
+    object.forEach(obj=>{
+      console.log(obj["name"])
+      let dict={}
+      dict.name=obj["name"]
+      names.push(dict)
+    })
+    return names 
+  }
+  const found=getKeyByValue(employees)
+  function select(e){
+console.log("name",e.target.innerText)
+const onset=employees.filter(emp=>emp.name===e.target.innerText)
+console.log(onset)
+setName(onset[0].name)
+setAge(onset[0].age)
+setImage(onset[0].image)
+setRole(onset[0].title)
+setSalary(onset[0].salary)
+  }
+  console.log(found)
   const [name,setName]=useState()
   const [age,setAge]=useState()
   const [image,setImage]=useState()
@@ -16,11 +38,14 @@ export default function Edit() {
       image:image
   }
   console.log(employee)
-  fetch('http://localhost:8000/employees',{method:"POST",headers:{"content-type":"application/json", 'Accept':'application/json'}, body:JSON.stringify(employee)}).then(res=>res.json()).then(data=>console.log(data))
+  fetch('http://localhost:8000/employees',{method:"PATCH",headers:{"content-type":"application/json", 'Accept':'application/json'}, body:JSON.stringify(employee)}).then(res=>res.json()).then(data=>console.log(data))
  }
   return (
     <div className='row'>
-      <div className="col-md-3"></div>
+      <div className="col-md-3">
+    {found.map(item=><h3 onClick={select}> {item.name}</h3>)}
+
+      </div>
       <div className="col-md-9">
     <div className="h1 text-center">Edit</div>
     <form className='text-center' onSubmit={handleSubmit}>
@@ -42,7 +67,7 @@ export default function Edit() {
 
 <input type="text" name="" value={role} onChange={(e)=>setRole(e.target.value)} />
 <br />
-<input type="submit" value="Add" />
+<input type="submit" value="Submit" />
     </form>
 
 
