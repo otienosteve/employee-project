@@ -27,4 +27,4 @@ In the project directory, you can run:
 
 ## Edit
 
-![Add](edit-page.png)
+![Add](Edit-page.png)
